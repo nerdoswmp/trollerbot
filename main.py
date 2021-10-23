@@ -2,13 +2,10 @@ import discord
 import os
 import random
 import time
-import math
 import python_weather
-import asyncio
 import requests
 import uuid
 import shutil
-from discord import Member
 from discord.ext import commands, tasks
 from itertools import cycle
 from replit import db

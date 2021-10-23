@@ -1,6 +1,5 @@
 from PIL import Image, ImageSequence, ImageFile
 import numpy as np
-import subprocess
 import os
 
 

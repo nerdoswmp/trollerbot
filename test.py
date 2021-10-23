@@ -1,6 +1,3 @@
-import python_weather
-import discord
-import os
 import math
 
 
