@@ -16,26 +16,28 @@ from keep_alive import keep_alive
 from test import mafs, operation
 from sussifier import sussy
 
-#####################################LISTS
-
-# https://pythonrepo.com/repo/nextcord-nextcord << u
-# https://discord-interactions.readthedocs.io/en/unstable/quickstart.html#installing
-
+"""
+https://pythonrepo.com/repo/nextcord-nextcord << u
+https://discord-interactions.readthedocs.io/en/unstable/quickstart.html#installing
+"""
+# LISTA DE PALAVRA PRA ATIVAR O SEXO
 zap = ['sexo','https://www.youtube.com/watch?v=QBFZyq3FRuw','https://youtu.be/QBFZyq3FRuw','Dennis e Cantini - Isso Que É Vida','pau no cu','pau no seu cu', 'meu cu', 'meu pau']
 
-
+# IMAGENS ENVIADAS POR CAUSA DO SEXO
 zapzap = ['https://cdn.discordapp.com/attachments/838913100483657728/868290803125067848/E66MgqBVoA8ICAB.png','https://media.discordapp.net/attachments/818907430560989264/864341396566704158/E6JHDobWQAoG_p8.png?width=449&height=473','https://cdn.discordapp.com/attachments/838913100483657728/868291184844492821/E66NxioVUAMVHlX.png','https://cdn.discordapp.com/attachments/838913100483657728/868291215894917133/E66sAAdWUAMggN-.png','https://cdn.discordapp.com/attachments/838913100483657728/868291248744726528/E662Z5tWUAwF_kJ.png','https://cdn.discordapp.com/attachments/838913100483657728/868291520762097664/9memrTmHKgxPTq8i.mp4']
 
+# VSF
 vsfs = ['vsf', 'vai se foder', 'vai se fuder', 'vai toma no cu', 'vtmnc']
 
+# VIDEOS DO LOL
 epic = ['https://cdn.discordapp.com/attachments/818907430560989264/818907457724219392/jtl_d_7tf4mds2dc.mp4', 'https://cdn.discordapp.com/attachments/818907430560989264/859834749157900338/VKYZVryDlObGOQD3.mp4','https://cdn.discordapp.com/attachments/818907430560989264/888660762124488744/4FG41C3qkZYqQSdY.mp4']
 
+# PRIMEIRO ITEM DO =BASED
 comedy_list = ['https://cdn.discordapp.com/attachments/470327818056892428/819171515706769408/IMG-20210309-WA0075.jpg']
 
 swag_list = []
 
-
-#####################################SETUP STUFF
+# DATABASE #
 
 def update_based(based_msg):
   if "based" in db.keys():
@@ -65,6 +67,7 @@ def delete_pasta(index):
     del pasta[index]
     db["pasta"] = pasta
 
+# INICIALIZADOR DO CLIENT
 client = discord.Client()
 
 @client.event
@@ -72,7 +75,7 @@ async def on_ready():
   change_status.start()
   print('We do a little trolling as {0.user}'.format(client))
 
-#####################################BOT ACTIVITY/STATUS
+# STATUS DE ATIVIDADE
 
 status = cycle(['=help for cmds', '@nerdoswamp please', 'shoutouts to my boy @StarPrankster', 'kasinoooo', 'amongrus', 'commanderbot 1v1 me'])
 
@@ -80,19 +83,20 @@ status = cycle(['=help for cmds', '@nerdoswamp please', 'shoutouts to my boy @St
 async def change_status():
   await client.change_presence(activity=discord.Game(next(status)))
 
-#####################################TEXT STUFF
+# FUNC PARA OS COMANDOS
 @client.event
 async def on_message(message):
   if message.author == client.user:
     return
 
-##########################################################################PASTA DATABASE##########################################################################
-
+# ID DO CANAL PRA MANDAR MSG PELO TROLLER
   updated = client.get_channel(883869143873490975)
 
+# VALOR PRO COMANDO =TROLLING FALSE/TRUE
   if "trolling" not in db.keys():
     db["trolling"] = True
 
+# ITENS RELACIONADOS À DATABASE DE COPYPASTA
   pastaopt = swag_list
   if "pasta" in db.keys():
     pastaopt = pastaopt + db["pasta"]
@@ -127,7 +131,8 @@ async def on_message(message):
       valuep = int(message.content.split("=frompasta",1)[1])
       pasta = db["pasta"]
       await message.channel.send(str(pasta.pop(valuep)))
-####################################################################################################################################################if
+
+# RESPONDER LOL E MANDAR ELE CALAR A BOCA
   if db["trolling"]:
     if message.content.startswith('lol'):
       random_lol = random.choice(epic)
@@ -143,7 +148,7 @@ async def on_message(message):
       db["trolling"] = False
       await message.channel.send("dame dane")
 
-##########################################################################BASED DATABASE##########################################################################
+# COISAS RELACIONADAS À DATABASED PADRÃO
   options = comedy_list
   if "based" in db.keys():
     options = options + db["based"]
@@ -179,23 +184,26 @@ async def on_message(message):
       based = db["based"]
       await message.channel.send(str(based.pop(value)))
 
-####################################################################################################################################################
-#
+# ENVIAR LISTA DE COMANDOS
   if message.content.startswith("=cmd"):
     await message.channel.send("```css\n"
     "['=list', '=fromlist', '=add', '=del', '=based', '=pasta', '=padd', '=pdel', '=plist', '=frompasta', '=color', '=rcolor', '=op', '=exame', '=png', '=weather'  and '=pfp'] are the commands avaliable\n""```")
-#
+
+# ENVIAR LINK DO SITE DE AJUDA
   if message.content.startswith("=help"):
     green = int('A8E916', 16)
     embed=discord.Embed(title="documentation", url="https://nerdoswamp.neocities.org",description= 'https://nerdoswamp.neocities.org << click this link for an example and explanation on each command' ,color=green)
     await message.channel.send(embed=embed)
-#
+
+# RESPONDER VSF
   if any(word in message.content for word in vsfs):
     await message.channel.send('vai vc')
-#
+
+# RESPONDER SEXO
   if any(word in message.content for word in zap):
     await message.channel.send(random.choice(zapzap))   
-#
+
+# EXAME DE CRINGE ANA MARIA BRAGA
   if message.content.startswith("=exame"):
     user = str(message.author.mention)
     user2 = str(message.author)
@@ -212,7 +220,7 @@ async def on_message(message):
     time.sleep(3)
     await message.channel.send('Fonte: https://media.discordapp.net/attachments/818907430560989264/859827321807437864/unknown.png?width=1198&height=676')
 
-#####################################WEATHER
+# COMANDO DE CLIMA =WEATHER
   if message.content.startswith("=weather"):
     city = (message.content.split("=weather ",1)[1])
     Wclient = python_weather.Client(format=python_weather.IMPERIAL)
@@ -236,13 +244,14 @@ async def on_message(message):
       await message.channel.send('https://thumbs.dreamstime.com/z/bald-man-thumbs-up-26364248.jpg')
     await Wclient.close()
 
-#####################################COLOR STUFF
+# RETORNAR COR
   if message.content.startswith("=color"):
     cvalue = (message.content.split("=color ",1)[1])
     hexd = int(cvalue, 16)
     embed=discord.Embed(title=cvalue, url="https://www.webfx.com/web-design/random-color-picker/#"+cvalue, description="https://www.webfx.com/web-design/random-color-picker/#"+cvalue, color=hexd)
     await message.channel.send(embed=embed)
-#
+
+# RETORNAR COR ALEATÓRIA
   if message.content.startswith("=rcolor"):
     r = lambda: random.randint(0,255)
     hvalue = ('%02X%02X%02X' % (r(),r(),r()))
@@ -250,22 +259,22 @@ async def on_message(message):
     embed=discord.Embed(title=hvalue, url="https://www.webfx.com/web-design/random-color-picker/#"+hvalue, description="https://www.webfx.com/web-design/random-color-picker/#"+hvalue, color=hexd)
     await message.channel.send(embed=embed)
 
-
-###################################MATHMATICS
-#
+# CALCULADORA
   if message.content.startswith("=op"):
     val = message.content.split("=op ",1)[1]
     res1, oper, res2 = val.split()
     await message.channel.send(operation(res1, oper, res2))
-#
+
+# RAIZ QUADRADA
   if message.content.startswith("=root"):
     num = int(message.content.split("=root ",1)[1])
     await message.channel.send(mafs(num))
 
-#####################################IMAGE STUFF
+# RETORNAR PFP
   if message.content.startswith("=pfp"):
     await message.channel.send(message.author.avatar_url)
-#
+
+# SUSSIFICADOR DE IMAGENS
   if message.content.startswith("=png"):
     busy = False
     while busy == False:
@@ -299,8 +308,7 @@ async def on_message(message):
                 break
 
 
-
-###
+# ENVIAR MSG NO SERVER
   if message.content.startswith('=ç'):
     txt = message.content.split("=ç ",1)[1]
     channel = client.get_channel(777541120963379202)
