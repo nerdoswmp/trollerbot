@@ -138,6 +138,14 @@ async def on_message(message):
       random_lol = random.choice(epic)
       await message.channel.send(random_lol)
 
+    # RESPONDER VSF
+    if any(word in message.content for word in vsfs):
+      await message.channel.send('vai vc')
+
+    # RESPONDER SEXO
+    if any(word in message.content for word in zap):
+      await message.channel.send(random.choice(zapzap))
+
   if message.content.startswith("=trolling"):
     value = message.content.split("=trolling ", 1)[1]
 
@@ -194,14 +202,6 @@ async def on_message(message):
     green = int('A8E916', 16)
     embed=discord.Embed(title="documentation", url="https://nerdoswamp.neocities.org",description= 'https://nerdoswamp.neocities.org << click this link for an example and explanation on each command' ,color=green)
     await message.channel.send(embed=embed)
-
-# RESPONDER VSF
-  if any(word in message.content for word in vsfs):
-    await message.channel.send('vai vc')
-
-# RESPONDER SEXO
-  if any(word in message.content for word in zap):
-    await message.channel.send(random.choice(zapzap))   
 
 # EXAME DE CRINGE ANA MARIA BRAGA
   if message.content.startswith("=exame"):
