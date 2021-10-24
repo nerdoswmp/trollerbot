@@ -217,6 +217,33 @@ async def on_message(message):
     time.sleep(3)
     await message.channel.send('Fonte: https://media.discordapp.net/attachments/818907430560989264/859827321807437864/unknown.png?width=1198&height=676')
 
+    """ Usando a função "Match" (switch) disponível no python 3.10
+    
+        if message.content.startswith("=exame"):
+          var = -1
+          user = str(message.author.mention)
+          user2 = str(message.author)
+          resultado = random.randint(0,100)
+          while var < 6:
+            time.sleep(0.75)
+            var += 1
+            match var:
+              case 0:
+                return await message.channel.send(f'###Examinando {user2}')
+              case 1:
+                return await message.channel.send('###Coletando cringe sanguineo')
+              case 2:
+                return await message.channel.send('###Extraindo based')
+              case 3:
+                return await message.channel.send('###Examinando pureza')
+              case 4:
+                return await message.channel.send(f'*** {user} é {resultado} % cringe ***')
+              case 5:
+                return await message.channel.send('Fonte: https://media.discordapp.net/attachments/818907430560989264/859827321807437864/unknown.png?width=1198&height=676')
+              case 6:
+                break
+    """
+
 # COMANDO DE CLIMA =WEATHER
   if message.content.startswith("=weather"):
     city = (message.content.split("=weather ",1)[1])
