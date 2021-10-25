@@ -33,5 +33,5 @@ def factorial(num):
 
 def bhask(a, b, c):                        
     raiz = (b**2)-(4*a*c)                   
-    cima = math.sqrt(raiz)                  
+    cima = math.sqrt(raiz)           # requires testing        
     return (-b+cima)/2*a, ((-b-cima)/2*a)
