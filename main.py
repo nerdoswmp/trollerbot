@@ -192,7 +192,7 @@ async def on_message(message):
 # ENVIAR LISTA DE COMANDOS
   if message.content.startswith("=cmd"):
     await message.channel.send("```css\n"
-    "['=list', '=fromlist', '=add', '=del', '=based', '=pasta', '=padd', '=pdel', '=plist', '=frompasta', '=color', '=rcolor', '=op', '=exame', '=png', '=weather'  and '=pfp'] are the commands avaliable\n""```")
+    "['=list', '=fromlist', '=add', '=del', '=based', '=pasta', '=padd', '=pdel', '=plist', '=frompasta', '=color', '=rcolor', '=op', '=exame', '=png', '=weather', '=root', '=factor', '=ttpo'  and '=pfp'] are the commands avaliable\n""```")
 
 # ENVIAR LINK DO SITE DE AJUDA
   if message.content.startswith("=help"):
