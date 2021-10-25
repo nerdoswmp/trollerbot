@@ -22,10 +22,10 @@ def operation(res1, oper, res2):
 
   return result
 
-def power(num, num2):   # Doesnt work
-  return (num**num2)      # ok hope it works now
+def power(num, num2):
+  return (num**num2)
 
-def factorial(num):     # Doesnt work either
+def factorial(num):
   if num == 0 or num == 1:
     return 1
   else:
