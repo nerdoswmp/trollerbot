@@ -296,8 +296,8 @@ async def on_message(message):
 
 # POTÊNCIA
   if message.content.startswith("=ttpo"):
-    num = int(message.content.split("=root ",1)[1])
-    num2 = int(message.content.split("=root ",1)[2])
+    num = int(message.content.split("=ttpo ",1)[1])
+    num2 = int(message.content.split("=ttpo ",1)[2])
     await message.channel.send(power(num,num2))
 
 # RETORNAR PFP
