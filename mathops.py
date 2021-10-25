@@ -30,3 +30,8 @@ def factorial(num):
     return 1
   else:
     return num*factorial(num-1)
+
+def bhask(a, b, c):                        
+    raiz = (b**2)-(4*a*c)                   
+    cima = math.sqrt(raiz)                  
+    return (-b+cima)/2*a, ((-b-cima)/2*a)

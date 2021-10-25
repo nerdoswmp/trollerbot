@@ -10,7 +10,7 @@ from discord.ext import commands, tasks
 from itertools import cycle
 from replit import db
 from keep_alive import keep_alive
-from mathops import mafs, operation, power, factorial
+from mathops import mafs, operation, power, factorial, bhask
 from sussifier import sussy
 
 """
@@ -304,6 +304,12 @@ async def on_message(message):
   if message.content.startswith("=factor"):
     num = int(message.content.split("=factor ",1)[1])
     await message.channel.send(factorial(num))
+
+# BHASKARA
+  if message.content.startswitw("=bhask"):
+    val = message.content.split("=bhask ",1)[1]
+    a, b, c = val.split()
+    await message.channel.send(bhask(int(a),int(b),int(c)))
 
 # RETORNAR PFP
   if message.content.startswith("=pfp"):
