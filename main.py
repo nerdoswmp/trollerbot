@@ -355,3 +355,5 @@ client.run(os.getenv('deeznuts'))
 # test
 # test 2
 # filler comment on a different branch check this out
+# adding this comment just so i cna have a cool looking network graph
+  # ^^ awesome ive merged both of them
