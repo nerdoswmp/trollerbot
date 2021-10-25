@@ -10,7 +10,7 @@ from discord.ext import commands, tasks
 from itertools import cycle
 from replit import db
 from keep_alive import keep_alive
-from test import mafs, operation
+from test import mafs, operation, power
 from sussifier import sussy
 
 """
@@ -293,6 +293,12 @@ async def on_message(message):
   if message.content.startswith("=root"):
     num = int(message.content.split("=root ",1)[1])
     await message.channel.send(mafs(num))
+
+# POTÊNCIA
+  if message.content.startswith("=ttpo"):
+    num = int(message.content.split("=root ",1)[1])
+    num2 = int(message.content.split("=root ",1)[2])
+    await message.channel.send(power(num,num2))
 
 # RETORNAR PFP
   if message.content.startswith("=pfp"):

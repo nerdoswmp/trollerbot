@@ -21,3 +21,6 @@ def operation(res1, oper, res2):
     result = ("```you gotta use '+' '-' '/' or '*'```")
 
   return result
+
+def power(num, num2):
+  return (num**num2)
