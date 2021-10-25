@@ -24,3 +24,9 @@ def operation(res1, oper, res2):
 
 def power(num, num2):
   return (num**num2)
+
+def factorial(num):
+  if num == 0 or num == 1:
+    return 1
+  else:
+    return factorial(num*factorial(num-1))

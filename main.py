@@ -10,7 +10,7 @@ from discord.ext import commands, tasks
 from itertools import cycle
 from replit import db
 from keep_alive import keep_alive
-from test import mafs, operation, power
+from test import mafs, operation, power, factorial
 from sussifier import sussy
 
 """
@@ -296,9 +296,14 @@ async def on_message(message):
 
 # POTÊNCIA
   if message.content.startswith("=ttpo"):
-    val = int(message.content.split("=ttpo ",1)[1])
-    num, num2 = val.split()
+    val = message.content.split("=ttpo ",1)[1]
+    num, num2 = int(val.split())
     await message.channel.send(power(num,num2))
+
+# FATORIAL
+  if message.content.startswith("=factor"):
+    num = int(message.content.split("=factor ",1)[1])
+    await message.channel.send(factorial(num))
 
 # RETORNAR PFP
   if message.content.startswith("=pfp"):
