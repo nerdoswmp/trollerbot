@@ -297,8 +297,8 @@ async def on_message(message):
 # POTÊNCIA
   if message.content.startswith("=ttpo"):
     val = message.content.split("=ttpo ",1)[1]
-    num, num2 = int(val.split())
-    await message.channel.send(power(num,num2))
+    num, num2 = val.split()
+    await message.channel.send(power(int(num),int(num2)))
 
 # FATORIAL
   if message.content.startswith("=factor"):
