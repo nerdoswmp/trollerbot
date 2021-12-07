@@ -306,7 +306,7 @@ async def on_message(message):
     await message.channel.send(factorial(num))
 
 # BHASKARA
-  if message.content.startswitw("=bhask"):
+  if message.content.startswith("=bhask"):
     val = message.content.split("=bhask ",1)[1]
     a, b, c = val.split()
     await message.channel.send(bhask(int(a),int(b),int(c)))
